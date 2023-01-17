@@ -11,7 +11,7 @@ void funkcija(int n)
 	{
 		niz[j] = 0;
 	}
-
+	//testgit
 	int pomocniBrojac = 99;
 	while (n > 0)
 	{

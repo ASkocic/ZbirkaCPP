@@ -2992,20 +2992,20 @@ void zadatak105()
 	cout << "Unesite n: ";
 	cin >> n;
 	int i = 2;
-	int koren = sqrt(n);
 	
-	while (i <= koren && (n % i) !=0 )
+	while (i < n && (n % i) !=0 )
 	{
 		i++;
+		if ((n % i) == 0)
+		{
+			cout << "Broj nije prost!";
+		}
+		if ((n % i) != 0)
+		{
+			cout << "Broj je prost!";
+		}
 	}
-	if (i > koren)
-	{
-		cout << n << "  je prost broj";
-	}
-	else
-	{
-		cout << n << " nije prost broj";
-	}
+	
 }
 
 /*106. . Napisati program koji broj transformiše na
@@ -3021,7 +3021,7 @@ void zadatak106()
 	while (faktor <= n)
 	{
 		if (n % faktor == 0)
-		{ 
+		{
 			cout << faktor << " ";
 			n = n / faktor;
 		}
@@ -3039,16 +3039,16 @@ void zadatak107()
 {
 	int i = 100;
 	int koren
-	
-	
-	while (i < 1000)
-	{
-		koren = sqrt(i);
-	}
+
+
+		while (i < 1000)
+		{
+			koren = sqrt(i);
+		}
 	cout << koren;
 }
 int main()
 {
-	zadatak107();
+	zadatak105();
 	return 0;
 }

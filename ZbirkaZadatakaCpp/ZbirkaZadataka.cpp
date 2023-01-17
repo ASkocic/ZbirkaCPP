@@ -11,7 +11,7 @@ void funkcija(int n)
 	{
 		niz[j] = 0;
 	}
-	//testgit
+
 	int pomocniBrojac = 99;
 	while (n > 0)
 	{
@@ -2955,12 +2955,100 @@ void zadatak103()
 /*104. Napisati program za izračunavanje suma s 
 kvadrata parnih i kubova neparnih prirodnih 
 brojeva od n do m. */
+void zadatak104()
+{
+	int n = 0;
+	cout << "Unesite n: ";
+	cin >> n;
+
+	int m = 0;
+	cout << "Unesite m: ";
+	cin >> m;
+	
+	int suma = 0;
+
+	while (n <= m)
+	{
+		if (n % 2 == 0)
+		{
+			suma += n * n;
+		}
+		else
+		{
+			suma += n * n * n;
+		}
+		n++;
+	}
+
+	cout << suma;
+}
+
+/*105. Napisati program koji proverava da li je uneti 
+broj n prost.Broj je prost ako je deljiv samo sa 
+jedan i samim sobom.*/
 void zadatak105()
 {
+	int n = 0;
+	cout << "Unesite n: ";
+	cin >> n;
+	int i = 2;
+	int koren = sqrt(n);
+	
+	while (i <= koren && (n % i) !=0 )
+	{
+		i++;
+	}
+	if (i > koren)
+	{
+		cout << n << "  je prost broj";
+	}
+	else
+	{
+		cout << n << " nije prost broj";
+	}
+}
 
+/*106. . Napisati program koji broj transformiše na
+proste faktore. Na primer, za 15 ispisace 5 3. */
+void zadatak106()
+{
+	int n = 0;
+	cout << "Unesite n: ";
+	cin >> n;
+
+	int faktor = 2;
+
+	while (faktor <= n)
+	{
+		if (n % faktor == 0)
+		{ 
+			cout << faktor << " ";
+			n = n / faktor;
+		}
+
+		else
+		{
+			faktor++;
+		}
+	}
+}
+
+/*107. Napisati program koji štampa trocifrene proste
+brojeve. */
+void zadatak107()
+{
+	int i = 100;
+	int koren
+	
+	
+	while (i < 1000)
+	{
+		koren = sqrt(i);
+	}
+	cout << koren;
 }
 int main()
 {
-	zadatak92();
+	zadatak107();
 	return 0;
 }

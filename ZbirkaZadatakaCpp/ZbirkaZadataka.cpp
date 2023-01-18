@@ -2992,20 +2992,20 @@ void zadatak105()
 	cout << "Unesite n: ";
 	cin >> n;
 	int i = 2;
+	int koren = sqrt(n);
 	
-	while (i < n && (n % i) !=0 )
+	while (i <= koren && (n % i) !=0 )
 	{
 		i++;
-		if ((n % i) == 0)
-		{
-			cout << "Broj nije prost!";
-		}
-		if ((n % i) != 0)
-		{
-			cout << "Broj je prost!";
-		}
 	}
-	
+	if (i > koren)
+	{
+		cout << "Broj je prost!";
+	}
+	else
+	{
+		cout << "Broj NIJE prost!";
+	}
 }
 
 /*106. . Napisati program koji broj transformiše na
@@ -3037,18 +3037,214 @@ void zadatak106()
 brojeve. */
 void zadatak107()
 {
-	int i = 100;
-	int koren
+	int i = 101;
+	int k = 2;
+	int koren = 0;
 
-
-		while (i < 1000)
+	while (i < 999)
+	{
+		koren = sqrt(i);
+		while (k <= koren && (i % k) != 0)
 		{
-			koren = sqrt(i);
+			k++;
+			if (k > koren)
+			{
+				cout << i << " ";	
+			}	
 		}
-	cout << koren;
+		k = 2;
+		i++;
+	}
+}
+
+
+//int Fibonacci(int elem)
+//{
+//	if (elem == 1 || elem == 2)
+//		return 1;
+//	else 
+//		return Fibonacci(elem - 1) + Fibonacci(elem - 2);
+//}
+
+
+
+/*108. Napisati program kojim se odredjuje n-ti član 
+Fibonačijevog niza.Niz gde je novi član jednak zbiru 
+prethodna dva. 1,1,2,3,5,8,13,21,34,55,89 */
+void zadatak108()
+{
+	int n = 0;
+	cout << "Unesite n: ";
+	cin >> n;
+
+	int nepostojeciElement = 0;
+	int drugiElement = 1;
+	int naredniElement = 0;
+	int i = 1;
+	while (i <= n - 1)
+	{
+		naredniElement = nepostojeciElement + drugiElement;
+		nepostojeciElement = drugiElement;
+		drugiElement = naredniElement;
+		i++;
+		
+	}
+	cout << naredniElement;
+}
+
+/*109. Napisati program koji štampa stepene dvojke ne 
+vede od n.*/
+void zadatak109()
+{
+	int stepen = 0;
+	cout << "Unesite stepen: ";
+	cin >> stepen;
+
+	int brojac = 0;
+	int broj = 2;
+
+	while (brojac <= stepen)
+	{
+		cout << pow(broj, brojac) << " ";
+		brojac++;
+	}
+}
+
+/*110. Odrediti stepen i vrednost prvog stepena 
+dvojke koji je veci od zadate vrednosti n.*/
+void zadatak110()
+{
+	int n = 0;
+	cout << "Unesite vrednost n: ";
+	cin >> n;
+
+	int i = 1;
+	int stepen = 0;
+	while (i <= n)
+	{
+		i *= 2;
+		stepen++;
+	}
+	cout << "To je: " << i << ", " << stepen << ". stepen broja 2.";
+
+}
+
+/*111. Odrediti zbir neparnih prirodnih brojeva na 
+intervalu od 1 do n.*/
+void zadatak111()
+{
+	int n = 0;
+	cout << "Unesite n: ";
+	cin >> n;
+	
+	int prviElement = 1;
+	int suma = 0;
+
+	while (prviElement <= n)
+	{
+		if((prviElement % 2) != 0)
+		suma += prviElement;
+		prviElement++;
+	}
+	cout << suma;
+}
+
+/*112. Odrediti najmanji broj uzastopnih parnih 
+brojeva počevši od 2 čije je suma veca od n.*/
+void zadatak112()
+{
+	int n = 0;
+	cout << "Unesite vrednost n: ";
+	cin >> n;
+
+	int suma = 0;
+	int prviElement = 2;
+	int brojacParnihbrojeva = 0;
+
+	while (suma <= n)
+	{
+		suma += prviElement;
+		prviElement += 2;
+		brojacParnihbrojeva++;
+	}
+	if (brojacParnihbrojeva < 5)
+	{
+		cout << "Potrebno je " << brojacParnihbrojeva << " uzatopna parna broja.";
+	}
+	else
+	{
+		cout << "Potrebno je " << brojacParnihbrojeva << " uzastopnih parnih brojeva.";
+	}
+}
+
+/*113. Napisati program kojim se za dati prirodan broj 
+n odredjuje k-kao broj cifara u dekadnom zapisu 
+broja.*/
+void zadatak113()
+{
+	int n = 0;
+	cout << "Unesite vrednost n: ";
+	cin >> n;
+
+	int k = 0;
+	while (n > 0)
+	{
+		n = n / 10;
+		k++;
+	}
+	cout << "Broj cifara je: " << k;
+}
+
+/*114. Napisati program koji za dati prirodan broj n 
+odredjuje sumu cifara broja n*/
+void zadatak114()
+{
+	
+	int n = 0;
+	cout << "Unesite vrednost n: ";
+	cin >> n;
+	
+	int sumaCifara = 0;
+	int k = 0;
+
+	while (n > 0)
+	{
+		sumaCifara += n % 10;
+		n = n / 10;
+	
+	}
+	cout << "Suma cifara je: " << sumaCifara;
+	
+}
+
+/*115. Napisati program koji za dati prirodan broj n 
+ispituje da li je n palindrom (Broj je palindrom ako je 
+redosled cifara gledano unazad isti kao i gledano 
+unapred , na primer 123321 , 1331, 2442 , 11 itd…)*/
+void zadatak115()
+{
+	int n = 0;
+	cout << "Unesite vrednost n: ";
+	cin >> n;
+
+	int s = 0;
+
+	while (n > 0)
+	{
+		s = ((s * 10 + n) % 10);
+		n = n / 10;
+	}
+	if (s = n)
+	{
+		cout << "Broj je palindrom!";
+	}
+	else
+	{
+		cout << "Broj nije palindrom!";
+	}
 }
 int main()
 {
-	zadatak105();
+    zadatak115();
 	return 0;
 }

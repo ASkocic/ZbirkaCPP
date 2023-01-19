@@ -3309,8 +3309,9 @@ void zadatak116()
 maksimalna vrednost u nizu.*/
 void zadatak117()
 {
+	
 	int n;
-	vector<int> niz = { 1,2,3,4,5,6,7,8,9,10 };
+	vector<int> niz = { 1,2,3,4,5,6,7,8,9,10};
     
 	int max = niz[0];
 
@@ -3320,7 +3321,6 @@ void zadatak117()
 		if (niz[i] > max)
 		{
 			max = niz[i];
-
 		}
 		i++;
 	}
@@ -3333,45 +3333,101 @@ elemenata u najdužoj seriji jednakih .*/
 void zadatak118()
 {
 	int n;
-	vector<int> niz = { 1,2,3,4,4,4,7,8,8,10 };
+	vector<int> niz = { 1,2,3,3,3,4,4,4,4,3,3,3,3,3,8,8,10 };
 
 	int prviElement = niz[0];
-	int brojacElemenata = 0;
+	int brojacElemenata = 1;
 	int pbrojac = 0;
 
-	int i = 0;
+	int i = 1;
 	while (i < niz.size())
 	{
 		if (niz[i] == prviElement)
 		{
-			prviElement = niz[i];
+			
 			brojacElemenata++;
-		
+			if (brojacElemenata > pbrojac)
+			{
+				pbrojac = brojacElemenata;
+
+			}
 		}
-		if (brojacElemenata > pbrojac)
+		else
 		{
-			pbrojac = brojacElemenata;
-			brojacElemenata = 0;
+			prviElement = niz[i];
+			brojacElemenata = 1;
 		}
+		
+		
 		i++;
 	}
 
-	cout << "U najduzoj seriji je " << pbrojac << "elementa";
+	cout << "U najduzoj seriji je " << pbrojac << " elementa";
 }
 
 /*119. Napisati program kojim se odredjuje koliko je 
-elemenata u najdužoj rastudoj seriji elemenata koji se 
-medjusobno razlikuju za 1. Za kraj unesite nulu.*/
+elemenata u najdužoj rastucoj seriji elemenata koji se 
+medjusobno razlikuju za 1.*/
 void zadatak119()
 {
+	int n;
+	vector<int> niz = { 1,2,3,3,3,4,4,4,4,5,6,7,8,9,10,3,3,3,3,3,8,8,10 };
 
+	int prviElement = niz[0];
+	int brojacElemenata = 1;
+	int pbrojac = 0;
+
+	int i = 1;
+	while (i < niz.size())
+	{
+		if (niz[i] == prviElement + 1)
+		{
+
+			brojacElemenata++;
+			if (brojacElemenata > pbrojac)
+			{
+				pbrojac = brojacElemenata;	
+			}
+		}
+		else
+		{	
+			brojacElemenata = 1;
+		}
+		prviElement = niz[i];
+		i++;
+		
+	}
+
+	cout << "U najduzoj seriji je " << pbrojac << " elementa";
 }
 /*120. Napisati program kojim se odredjuje broj 
 jedinica u binarnom zapisu prirodnog
 broja n.*/
 void zadatak120()
 {
-
+	int n = 0;
+	cout << "Unesite prirodni broj n: ";
+	cin >> n;
+	
+	int brojJedinica = 0;
+	while (n != 0)
+	{
+		if ((n % 2) & 1)
+		{
+			brojJedinica++;
+		}
+		n = n >> 1;
+	}
+	
+	/*while (n != 0)
+	{
+		if ((n % 2) != 0)
+		{
+			brojjedinica++;	
+		}
+		n = n / 2;
+	}*/
+	cout << "Broj jedinica: " << brojJedinica;
 }
 
 /*121. Napisati program za izračunavanje n-tog 
@@ -3401,10 +3457,32 @@ void zadatak121()
 i praznina. Tekst pisati velikim slovima latinice.*/
 void zadatak122()
 {
+	string text = "AB BE KKKKLLAEIOPJ LA LKJSAPOIREQW";
+	int brojSamoglasnika = 0;
+	int brojSuglasnika = 0;
+	int brojPraznina = 0;
+
+	for (int i = 0; i < text.length(); i++)
+	{
+		if (text[i] == ' ')
+		{
+			brojPraznina++;
+		}
+		else if (text[i] == 'A' || text[i] == 'E' || text[i] == 'I' || text[i] == 'O' || text[i] == 'U' || text[i] == 'R' )
+		{
+			brojSamoglasnika++;
+		}
+		else
+		{
+			brojSuglasnika++;
+		}
+	}
+
+	cout << brojPraznina << brojSamoglasnika << brojSuglasnika;
 
 }
 int main()
 {
-	zadatak118();
+	zadatak122();
 	return 0;
 }

@@ -3227,14 +3227,15 @@ void zadatak115()
 	cout << "Unesite vrednost n: ";
 	cin >> n;
 
-	int s = 0;
+	int noviBroj = 0;
+	int m = n;
 
-	while (n > 0)
+	while (m > 0)
 	{
-		s = ((s * 10 + n) % 10);
-		n = n / 10;
+		noviBroj = (noviBroj * 10) + (m % 10);
+		m = m / 10;
 	}
-	if (s = n)
+	if (n == noviBroj)
 	{
 		cout << "Broj je palindrom!";
 	}
@@ -3243,8 +3244,167 @@ void zadatak115()
 		cout << "Broj nije palindrom!";
 	}
 }
+
+/*116. Napisati program kojim se odredjuje najveci 
+zajednički delilac prirodnih brojeva m i n.*/
+void zadatak116()
+{
+	int m, n;
+	cout << "Unesite m i n: ";
+	cin >> m >> n;
+	int nzd = 0;
+
+	while ((m % n) != 0)
+	{
+		nzd = m % n;
+		m = n;
+		n = nzd;
+	}
+	cout << "NZD je: " << n;
+	
+	//Cika Euklid
+	/*if (m % n == 0)
+		cout << "NZD je: " << n;
+
+	if (m == n)
+		cout << "NZD je: " << n;
+
+	if(m > n)
+	{
+		while (m > n)
+		{
+			nzd = m - n;
+			m = nzd;
+			while (n > m)
+			{
+				nzd = n - m;
+				n = nzd;
+			}
+		}
+		if (n == m)
+		{
+			cout << "NZD je: " << nzd;
+		}
+	}	
+	if (m < n)
+	{
+		while (n > m)
+		{
+			nzd = n - m;
+			n = nzd;
+			while (m > n)
+			{
+				nzd = m - n;
+				m = nzd;
+			}
+		}
+		if (m == n)
+		{
+			cout << "NZD je: " << nzd;
+		}
+	}*/
+}
+
+/*117. Napisati program kojim se odredjuje 
+maksimalna vrednost u nizu.*/
+void zadatak117()
+{
+	int n;
+	vector<int> niz = { 1,2,3,4,5,6,7,8,9,10 };
+    
+	int max = niz[0];
+
+	int i = 0;
+	while (i < niz.size())
+	{
+		if (niz[i] > max)
+		{
+			max = niz[i];
+
+		}
+		i++;
+	}
+
+	cout << "Maks je: " << max;
+}
+
+/*118. Napisati program kojim se odredjuje koliko je 
+elemenata u najdužoj seriji jednakih .*/
+void zadatak118()
+{
+	int n;
+	vector<int> niz = { 1,2,3,4,4,4,7,8,8,10 };
+
+	int prviElement = niz[0];
+	int brojacElemenata = 0;
+	int pbrojac = 0;
+
+	int i = 0;
+	while (i < niz.size())
+	{
+		if (niz[i] == prviElement)
+		{
+			prviElement = niz[i];
+			brojacElemenata++;
+		
+		}
+		if (brojacElemenata > pbrojac)
+		{
+			pbrojac = brojacElemenata;
+			brojacElemenata = 0;
+		}
+		i++;
+	}
+
+	cout << "U najduzoj seriji je " << pbrojac << "elementa";
+}
+
+/*119. Napisati program kojim se odredjuje koliko je 
+elemenata u najdužoj rastudoj seriji elemenata koji se 
+medjusobno razlikuju za 1. Za kraj unesite nulu.*/
+void zadatak119()
+{
+
+}
+/*120. Napisati program kojim se odredjuje broj 
+jedinica u binarnom zapisu prirodnog
+broja n.*/
+void zadatak120()
+{
+
+}
+
+/*121. Napisati program za izračunavanje n-tog 
+stepena celog broja a.*/
+void zadatak121()
+{
+	int a = 0;
+	int i = 1;
+	int stepen = 1;
+	cout << "Unesite  broj a: ";
+	cin >> a;
+	
+	int n = 0;
+	cout << "Unesite stepen n: ";
+	cin >> n;
+	
+
+	while (i <= n)
+	{
+		stepen *= a;
+		i++;
+	}
+	cout << n << ". stepen broja " << a << " je " << stepen;
+}
+
+/*122. Napisati program kojim se u tekstu čije je obeležje kraja '*' odredjuje broj samoglasnika, suglasnika 
+i praznina. Tekst pisati velikim slovima latinice.*/
+void zadatak122()
+{
+
+}
 int main()
 {
-    zadatak115();
+	zadatak118();
 	return 0;
 }

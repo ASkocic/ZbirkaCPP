@@ -3597,7 +3597,7 @@ void zadatak127()
 
 	int suma = 0;
 	
-	std::vector<int>nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		suma += nizOdN[i];
@@ -3606,8 +3606,38 @@ void zadatak127()
 	stampajvektor(nizOdN);
 	std::cout << suma << std::endl;
 }
+
+/*128. Napisati program kojim se unose članovi niza i
+izračunava srednja vrednost niza x od n elemenata.*/
+void zadatak128()
+{
+
+}
+
+/*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
+		   *  
+		  ***
+		 *****
+		*******   
+      ............*/
+void zadatakBonus()
+{
+	int n = 0;
+	std::cout << "Uneti n: ";
+	std::cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		//std::cout << ' ';
+		for (int k = i; k < n; k++)
+		{
+			std::cout << '*';
+		}
+		std::cout << std::endl;
+	}
+}
 int main()
 {
-	zadatak127();
+	zadatakBonus();
 	return 0;
 }

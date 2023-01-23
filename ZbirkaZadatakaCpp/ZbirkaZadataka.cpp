@@ -3625,16 +3625,51 @@ void zadatakBonus()
 	int n = 0;
 	std::cout << "Uneti n: ";
 	std::cin >> n;
-
+	
+	for (int i = 0; i <= 2*n - i; i++)
+	{
+		std::cout << ' ';
+		for (int k = 0; k < n - i - 1 ; k++)
+		{
+				std::cout << '*';
+		
+		}
+		
+		std::cout << std::endl;
+	}
+	
+	
+	/*  *
+		**
+		***
+		****
+		*****
+	
 	for (int i = 0; i < n; i++)
 	{
-		//std::cout << ' ';
-		for (int k = i; k < n; k++)
+
+		for (int k = 0; k < i + 1; k++)
 		{
 			std::cout << '*';
 		}
 		std::cout << std::endl;
 	}
+	*/
+	/*  *****
+		****
+		***
+		**
+		*
+	for (int i = 0; i < n; i++)
+	{
+		
+		for (int k = i; k < n; k++)   || k = 0; k < n- i; k++
+		{
+			std::cout << '*';
+		}
+		std::cout << std::endl;
+	}
+	*/
 }
 int main()
 {

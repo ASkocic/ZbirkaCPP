@@ -3611,7 +3611,21 @@ void zadatak127()
 izračunava srednja vrednost niza x od n elemenata.*/
 void zadatak128()
 {
+	int n = 0;
+	std::cout << "Unesi n: ";
+	std::cin >> n;
 
+	int suma = 0;
+	int prosecnaVrednost = 0;
+
+	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
+	for (int i = 0; i < nizOdN.size(); i++)
+	{
+		suma += nizOdN[i];
+	}
+
+	stampajvektor(nizOdN);
+	std::cout << suma << std::endl;
 }
 
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 

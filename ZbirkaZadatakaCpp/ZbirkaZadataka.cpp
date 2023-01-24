@@ -3572,13 +3572,17 @@ std::vector<int> generisiNizDuzineN(int n)
 	return niz;
 }
 
-std::vector<int> generisiNasumicniNizDuzineN(int n)
+std::vector<float> generisiNasumicniNizDuzineN(int n)
 {
-	std::vector<int> niz;
+	std::vector<float> niz;
 	niz.resize(n);
 	for (int i = 0; i < n; i++)
 	{
 		niz[i] = rand() % 100;
+		if (niz[i] < 2000)
+		{
+			niz[i] *= -1;
+		}
 	}
 	return niz;
 }
@@ -3597,7 +3601,7 @@ void zadatak127()
 
 	int suma = 0;
 	
-	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		suma += nizOdN[i];
@@ -3618,14 +3622,85 @@ void zadatak128()
 	int suma = 0;
 	int prosecnaVrednost = 0;
 
-	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		suma += nizOdN[i];
 	}
-
+	prosecnaVrednost = suma / n;
 	stampajvektor(nizOdN);
-	std::cout << suma << std::endl;
+	std::cout << "Prosecna vrednost: " << prosecnaVrednost;
+}
+
+/*129. Napisati program kojim se izračunava maksimalna vrednost niza x od n elemenata (n≤50).*/
+void zadatak129()
+{
+	int n = 0;
+	std::cout << "Unesi n: ";
+	std::cin >> n;
+
+	int suma = 0;
+	int maksimalnaVrednost = 0;
+
+	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+	for (int i = 0; i < nizOdN.size(); i++)
+	{
+		if (nizOdN[i] > maksimalnaVrednost)
+		{
+			maksimalnaVrednost = nizOdN[i];
+		}
+	}
+	
+	stampajvektor(nizOdN);
+	std::cout << "\nMax vrednost: " << maksimalnaVrednost;
+}
+/*130. Napisati program koji od korisnika učitava 
+ceo broj n, 1 ≤ n ≤ 5000 , potom n realnih brojeva i 
+odredjuje koliko njih je strogo vede od proseka svih 
+učitanih realnih brojeva. */
+void zadatak130()
+{
+    int n = 0;
+	std::cout << "Unesi n realnih brojeva: ";
+	std::cin >> n;
+
+	int suma = 0;
+	int prosecnaVrednost = 0;
+	int brojacClanova = 0;
+
+	if (n >= 1 && n <= 5000)
+	{
+		std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+		for (int i = 0; i < nizOdN.size(); i++)
+		{
+			suma += nizOdN[i];
+		}
+		prosecnaVrednost = suma / n;
+		
+		for (int i = 0; i < nizOdN.size(); i++)
+		{
+			if (nizOdN[i] > prosecnaVrednost)
+			{
+				brojacClanova++;
+			}
+		}
+		
+		
+		stampajvektor(nizOdN);
+		std::cout << "\nProsecna vrednost: " << prosecnaVrednost;
+		std::cout << "\nVece od proseka je " << brojacClanova << " clana/ova.";
+	}
+	else 
+	{
+		std::cout << "Uneta vrednost n mora biti 1 <= n <=5000!!!";
+	}
+}
+/*131. Dat je prirodan broj N.Napisati program koji
+de generisati i odštampati niz cifara broja N, 
+počevši od cifre najmanje težine. */
+void zadatak131()
+{
+
 }
 
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
@@ -3687,6 +3762,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatakBonus();
+	zadatak130();
 	return 0;
 }

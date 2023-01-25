@@ -3695,12 +3695,33 @@ void zadatak130()
 		std::cout << "Uneta vrednost n mora biti 1 <= n <=5000!!!";
 	}
 }
-/*131. Dat je prirodan broj N.Napisati program koji
+/*131. Dat je prirodan broj N. Napisati program koji
 de generisati i odštampati niz cifara broja N, 
 počevši od cifre najmanje težine. */
 void zadatak131()
 {
+	int i = 0;
+	int n = 0;
+	std::cout << "Unesite prirodan broj n: ";
+	std::cin >> n;
 
+	
+	if (n > 0)
+	{
+		std::vector<int> nizCifara;
+		while (n > 0)
+		{
+			nizCifara.push_back(n % 10);
+			n = n / 10;			
+		}
+		stampajvektor(nizCifara);
+		
+	}
+	else
+	{
+		std::cout << "n mora biti veci od 0!!!";
+	}
+	
 }
 
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
@@ -3762,6 +3783,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak130();
+	zadatak131();
 	return 0;
 }

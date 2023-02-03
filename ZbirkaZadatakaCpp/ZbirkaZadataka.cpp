@@ -3,6 +3,7 @@
 #include <math.h>
 #include <numeric>
 #include <iterator>
+#include <algorithm>
 //using namespace std;
 
 //void funkcija(int n)
@@ -3579,7 +3580,7 @@ std::vector<float> generisiNasumicniNizDuzineN(int n)
 	for (int i = 0; i < n; i++)
 	{
 		niz[i] = rand() % 100;
-		if (niz[i] < 2000)
+		if (niz[i] < 35)
 		{
 			niz[i] *= -1;
 		}
@@ -3714,14 +3715,32 @@ void zadatak131()
 			nizCifara.push_back(n % 10);
 			n = n / 10;			
 		}
+		std::sort(nizCifara.begin(), nizCifara.end());
 		stampajvektor(nizCifara);
 		
+	
 	}
 	else
 	{
 		std::cout << "n mora biti veci od 0!!!";
 	}
 	
+}
+
+/*132.Napisati program koji unesene brojeve sortira 
+u rastucem redosledu*/
+void zadatak132()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<float> niz= generisiNasumicniNizDuzineN(n);
+	std::vector<float> pomocniNiz;
+	pomocniNiz.resize(n);
+
+
+	stampajvektor(niz);
 }
 
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
@@ -3783,6 +3802,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak131();
+	zadatak132();
 	return 0;
 }

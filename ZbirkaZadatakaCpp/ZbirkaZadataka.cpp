@@ -3573,9 +3573,9 @@ std::vector<int> generisiNizDuzineN(int n)
 	return niz;
 }
 
-std::vector<float> generisiNasumicniNizDuzineN(int n)
+std::vector<int> generisiNasumicniNizDuzineN(int n)
 {
-	std::vector<float> niz;
+	std::vector<int> niz;
 	niz.resize(n);
 	for (int i = 0; i < n; i++)
 	{
@@ -3602,7 +3602,7 @@ void zadatak127()
 
 	int suma = 0;
 	
-	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		suma += nizOdN[i];
@@ -3623,7 +3623,7 @@ void zadatak128()
 	int suma = 0;
 	int prosecnaVrednost = 0;
 
-	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		suma += nizOdN[i];
@@ -3643,7 +3643,7 @@ void zadatak129()
 	int suma = 0;
 	int maksimalnaVrednost = 0;
 
-	std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+	std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
 	for (int i = 0; i < nizOdN.size(); i++)
 	{
 		if (nizOdN[i] > maksimalnaVrednost)
@@ -3671,7 +3671,7 @@ void zadatak130()
 
 	if (n >= 1 && n <= 5000)
 	{
-		std::vector<float> nizOdN = generisiNasumicniNizDuzineN(n);
+		std::vector<int> nizOdN = generisiNasumicniNizDuzineN(n);
 		for (int i = 0; i < nizOdN.size(); i++)
 		{
 			suma += nizOdN[i];
@@ -3735,14 +3735,330 @@ void zadatak132()
 	std::cout << "Unesite n: ";
 	std::cin >> n;
 
-	std::vector<float> niz= generisiNasumicniNizDuzineN(n);
-	std::vector<float> pomocniNiz;
-	pomocniNiz.resize(n);
-
-
+	std::vector<int> niz= generisiNasumicniNizDuzineN(n);
+	int pp = 0;
+	for (int i = 0; i < niz.size(); i++)
+	{
+		
+		for (int k = i; k < niz.size() - 1; k++)
+		{
+			if (niz[i] >= niz[k + 1])
+			{
+				pp = niz[i];
+				niz[i] = niz[k + 1];
+				niz[k + 1] = pp;
+			}
+			
+		}
+	}
 	stampajvektor(niz);
 }
 
+/*133. Napisati program za određivanje najmanjeg 
+člana niza a*i+,i=1,30 i njegovog rednog mesta u 
+nizu.*/
+void zadatak133()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+
+	int min = niz[0];
+	int pozicija = 0;
+
+	for(int i = 1; i < niz.size(); i++)
+	{
+		if (min > niz[i])
+		{
+			min = niz[i];
+			pozicija = i;
+		}
+	}
+	stampajvektor(niz);
+	std::cout << "Minimum je: " << min << " na poziciji " << pozicija; 
+
+}
+
+/*134.Sastaviti program za određivanje najmanjeg 
+člana niza čiji su indeksi neparni i najveceg člana 
+niza čiji su indeksi parni.*/
+void zadatak134()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+
+	int min = niz[1];
+	int max = niz[0];
+	int pozicijaParnih = 0;
+	int pozicijaNeparnih = 0;
+
+
+	for (int i = 1; i < niz.size(); i +=2)
+	{
+		if (min > niz[i])
+		{
+			min = niz[i];
+			pozicijaNeparnih = i;
+		}
+	}
+	
+	stampajvektor(niz);
+	std::cout << "\nMinimum neparnih indeksa je: " << min << " na poziciji " << pozicijaNeparnih;
+
+	for (int i = 0; i < niz.size(); i+=2)
+	{
+		if (max < niz[i])
+		{
+			max = niz[i];
+			pozicijaParnih = i;
+		}
+	}
+	std::cout << "\nMaksimum parnih indeksa je: " << max << " na poziciji " << pozicijaParnih;
+}
+/*135. . Napisati program kojim se na osnovu nizova 
+b[1], b[2],...,b[n] i c[1], c[2],...,c[n] formira niz a[1], 
+a*2+,...,a*2n+ čije su vrednosti b*1+, c*1+,b*2+ 
+,c[2],..., b[n],c[n].*/
+void zadatak135()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz1 = generisiNasumicniNizDuzineN(n);
+	std::vector<int> niz2 = generisiNasumicniNizDuzineN(n);
+	std::vector<int> niz3;
+	niz3.resize(2*n);
+
+	for (int i = 0; i < niz3.size(); i +=2)
+	{
+		
+		niz3[i] = niz1[i/2];
+		niz3[i + 1] = niz2[i/2];
+	}
+	
+	stampajvektor(niz1);
+    std::cout << "\n";
+	stampajvektor(niz2);
+	std::cout << "\n";
+	stampajvektor(niz3);
+}
+
+/*136. . Napisati program kojim se elementi niza 
+a*1+, a*2+,...,a*n+ premeštaju u inverzni poredak.*/
+void zadatak136()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	int pp = 0;
+	stampajvektor(niz);
+	
+	for(int i = 0; i < niz.size()/2; i++)
+	{
+		pp = niz[n - i - 1];
+		niz[n - i - 1] = niz[i];
+		niz[i] = pp;
+		
+
+	}
+	/*std::vector<float> inverzniNiz;
+	inverzniNiz.resize(n);
+
+	for (int i = 0; i < niz.size(); i ++ )
+	{
+		inverzniNiz[i] = niz[n-1];
+		n--;
+	}*/
+	std::cout << std::endl;
+	stampajvektor(niz);
+	/*std::cout << "\n";
+	std::cout << "Inverzni niz je : "; 
+	stampajvektor(inverzniNiz);*/
+}
+
+/*137. Napisati program kojim se niz a[1], a[2],...,a[n] 
+sortira u monotono neopadajudi poredak.*/
+void zadatak137()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	int pp = 0;
+	for (int i = 0; i < niz.size(); i++)
+	{
+
+		for (int k = i; k < niz.size() - 1; k++)
+		{
+			if (niz[i] >= niz[k + 1])
+			{
+				pp = niz[i];
+				niz[i] = niz[k + 1];
+				niz[k + 1] = pp;
+			}
+
+		}
+	}
+	
+	stampajvektor(niz);
+}
+
+/*138. Napisati program za određivanje i prikazivanje 
+dva najveda elementa niza A*i+.*/
+void zadatak138()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+
+	int max = niz[0];
+	int max1 = max;
+	
+	int pozicija1 = 0;
+	int pozicija2 = 0;
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (max < niz[i])
+		{
+			max = niz[i];
+			pozicija1 = i;
+		}
+	}
+	
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (max1 < niz[i] && i != pozicija1)
+		{
+			max1 = niz[i];
+			pozicija2 = i;
+		}
+	}
+	stampajvektor(niz);
+	std::cout << "\nDva najveca broja su: " << max << " na poziciji " << pozicija1 << " i " << max1 << " na poziciji " << pozicija2;
+}
+
+/*139. Neka je dat niz xx od n elemenata. Napisati 
+program kojim se računa zbir članova niza koji su 
+deljivi sa 3 i 7.*/
+void zadatak139()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int suma = 0;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if ( niz[i] % 3 == 0 && niz[i] % 7 == 0)
+		{
+			suma += niz[i];
+		}
+	}
+	stampajvektor(niz);
+	std::cout << std::endl <<suma;
+
+}
+
+/*140. Neka su data dva niza xx i yy od po 
+pet članova. Napiši program kojim se računa 
+ukupan broj parova nizova koji na istom indeksu i 
+imaju jednake elemente.*/
+void zadatak140()
+{
+	std::vector<int> nizXX = {1, -10, 3, 0 ,20};
+	std::vector<int> nizYY = { 1, 0, 3, 2, 20 };
+	int pp = 0;
+	for (int i = 0; i < nizXX.size(); i++)
+	{
+		if (nizXX[i] == nizYY[i])
+		{
+			pp++;
+		}
+	}
+	stampajvektor(nizXX);
+	std::cout << std::endl;
+	stampajvektor(nizYY);
+	std::cout << std::endl << "Broj jednakih parova je :" << pp;
+}
+
+/*141. Neka je dat niz xx od 5 elemenata. Napiši 
+program kojim se formira niz yy od elemanata niza 
+xx koji su parni.*/
+void zadatak141()
+{
+	std::vector<int> nizXX = { 1, -10, 3, 0 ,20 };
+	std::vector<int> nizYY;
+	nizYY.resize(nizXX.size());
+	int brojac = 0;
+	for (int i = 0; i < nizXX.size(); i++)
+	{
+		if (nizXX[i] % 2 == 0)
+		{
+			nizYY[brojac] = nizXX[i];
+			brojac++;
+		}
+	}
+	nizYY.resize(brojac);
+	stampajvektor(nizYY);
+}
+
+/*142. . Ispred blagajne je poređano n ljudi sa svojim 
+visinama h [1], h [2], ..., h [n] u tom redosledu. 
+Napisati program koji određuje broj ljudi koje vidi 
+blagajnik sa početka reda. Na primer, za ljude sa 
+visinama 155, 170, 165, 180, 175, 195, blagajnik 
+vidi prvog, drugog, četvrtog i šestog čoveka –
+odgovor je 4. */
+std::vector<int> generisiVisine(int n)
+{
+	std::vector<int> niz;
+	niz.resize(n);
+	for (int i = 0; i < n; i++)
+	{
+		niz[i] = 100 + rand() % 100;
+		
+	}
+	return niz;
+}
+void zadatak142()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> visine = generisiVisine(n);
+	stampajvektor(visine);
+
+	int max = visine[0];
+	int brojac = 1;
+
+	for (int i = 1; i < visine.size(); i++)
+	{
+		
+		if (max < visine[i])
+		{
+			brojac++;
+			max = visine[i];
+		}
+		
+	}
+	std::cout << "Moze da vidi: " << brojac << " coveka.";
+}
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
 		   *  
 		  ***
@@ -3802,6 +4118,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak132();
+	zadatak142();
 	return 0;
 }

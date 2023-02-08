@@ -4059,6 +4059,113 @@ void zadatak142()
 	}
 	std::cout << "Moze da vidi: " << brojac << " coveka.";
 }
+/*143. Napisati program koji određuje indeks i 
+vrednost prvog člana u nizu koji je najbliži srednjoj 
+vrednosti niza.*/
+void zadatak143()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int suma = 0;
+	int srednjaVrednost = 0;
+	
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	stampajvektor(niz);
+	for (int i = 0; i < niz.size(); i++)
+	{
+		suma += niz[i];
+	}
+	
+	srednjaVrednost = suma / n;
+	std::cout << "\nSrednja vrednost niza je : " << srednjaVrednost;
+	
+	int razlika = abs(srednjaVrednost - niz[0]);
+	int indeks = 0;
+	int minimalnaRazlika = 0;
+
+	for (int k = 1; k < niz.size(); k++)
+	{
+		if (abs(srednjaVrednost - niz[k]) < razlika )
+		{
+			razlika = abs(srednjaVrednost - niz[k]);
+			indeks = k;
+		}
+	}
+
+	std::cout << "\nTo je broj: " << niz[indeks] << ", sa indeksom " << indeks;
+
+}
+
+/*144. Napisati program koji de ispitati da li je niz 
+b[1],...,b[k] podniz niza a[1],...,a[n]. Niz b je podniz 
+niza a ukoliko postoji indeks s (0 ≤ s ≤ n) tako da 
+važi: a[s]+=b[0], a[s+1]=b[2],..., a[s+k-1]=b[k].*/
+void zadatak144()
+{
+	/*int n = 0;
+	std::cout << "Unesite broj clanova niza A: ";
+	std::cin >> n;
+	int k = 0;
+	std::cout << "Unesite broj clanova niza B: ";
+	std::cin >> n;
+
+	if (k <= n)
+	{*/
+		std::vector<int> nizA = { 5, 1, 7, 8 , 5, 1, 1 };
+		std::vector<int> nizB = { 5, 1, 9 };
+
+		bool check = false;
+		int j = 0;
+		for (int i = 0; i < nizA.size(); i++)
+		{
+			if (nizB[j] == nizA[i])
+			{
+				j++;
+				if (j == nizB.size())
+				{
+					std::cout << "Niz B je podniz niza A";
+					check = true;
+					break;
+				}	
+			}
+			else
+			{
+				j = 0;
+
+			}
+		}
+		if (!check)
+		{
+			std::cout << "Niz B nije podniz niza A";
+		}
+	/*}
+	else
+		std::cout << "NizB nije podniz nizaA!!!"*/
+
+}
+
+/*145. Neka je dat niz a od 10 elemeneta. Napiši 
+program kojim se sračunava ukupan broj brojeva 
+koji su međusobno jednaki.*/
+void zadatak145()
+{
+	std::vector<int> niz = { 0, 2, 3 , 2, 3, 5, 10, -1, 0, -1, 2 };
+	int brojac = 0;
+	int k = 0;
+	stampajvektor(niz);
+	for (int i = 1; i < niz.size(); i++)
+	{
+		if (niz[k] == niz[i])
+		{
+			brojac += 1;
+		}
+	
+	}
+	std::cout << "\nBr. brojeva koji su jednaki: " << brojac;
+}
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
 		   *  
 		  ***
@@ -4118,6 +4225,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak142();
+	zadatak145();
 	return 0;
 }

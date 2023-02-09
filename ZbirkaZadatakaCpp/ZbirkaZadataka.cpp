@@ -4152,20 +4152,188 @@ program kojim se sračunava ukupan broj brojeva
 koji su međusobno jednaki.*/
 void zadatak145()
 {
-	std::vector<int> niz = { 0, 2, 3 , 2, 3, 5, 10, -1, 0, -1, 2 };
-	int brojac = 0;
-	int k = 0;
+	std::vector<int> niz = { 0, 2, 3 , 2, 3, 0, 0, 6 , -1, -1, 0};
+	std::vector<int> pomocniNiz;
+
 	stampajvektor(niz);
-	for (int i = 1; i < niz.size(); i++)
-	{
-		if (niz[k] == niz[i])
-		{
-			brojac += 1;
-		}
+	std::cout << std::endl;
 	
+
+	int brojac = 0;
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		bool uPomocnomNizu = false;
+		for (int k = 0; k < pomocniNiz.size(); k++)
+		{
+			if (niz[i] == pomocniNiz[k])
+			{
+				uPomocnomNizu = true;
+				break;
+			}
+		}
+		if (uPomocnomNizu)
+		{
+			continue;
+		}
+		for (int k = i + 1; k < niz.size(); k++)
+		{
+			if (niz[i] == niz[k])
+			{
+				pomocniNiz.push_back(niz[i]);
+				brojac++;
+				break;
+			}
+		}
 	}
+
+	stampajvektor(pomocniNiz);
 	std::cout << "\nBr. brojeva koji su jednaki: " << brojac;
+	/*std::cout << niz.size();*/
 }
+void zadatak145a()
+{
+	std::vector<int> niz = { 0, 2, 3 , 2, 3, 0, 0, 6 , -1, -1, 0 };
+	int pp = 0;
+	for (int i = 0; i < niz.size(); i++)
+	{
+		
+		for (int k = i; k < niz.size() - 1; k++)
+		{
+			if (niz[i] >= niz[k + 1])
+			{
+				pp = niz[i];
+				niz[i] = niz[k + 1];
+				niz[k + 1] = pp;
+			}
+
+		}
+	}
+	stampajvektor(niz);
+	std::vector<int> pomocniNiz;
+
+	for (int j = 0; j < niz.size(); j++)
+	{
+		bool uPomocnomNizu = false;
+		
+		if (niz[j] == niz[j + 1])
+		{
+			pomocniNiz.push_back(niz[j]);
+		}
+	}
+
+}
+
+/*146. Učitati članove niza. Izračunati i ispisati sumu 
+parnih i neparnih članova niza odvojeno.*/
+void zadatak146()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int sumaParnih = 0;
+	int sumaNeparnih = 0;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] % 2 == 0)
+		{
+			sumaParnih += niz[i];
+		}
+		else
+		{
+			sumaNeparnih += niz[i];
+		}
+	}
+	stampajvektor(niz);
+	std::cout << "Suma parnih brojeva u nizu je: " << sumaParnih << " a suma neparnih je: " << sumaNeparnih;
+}
+
+/*147. Učitati članove niza.Izračunati i ispisati broj
+članova niza vedih od aritmetičke sredine i njihovu
+sumu*/
+void zadatak147()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+	
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	int brojac = 0;
+	int suma = 0;
+	int sumaArt = 0;
+	
+	for (int i = 0; i < niz.size(); i++)
+	{
+		suma += niz[i];
+	}
+	int aritmetickaSredina = suma / n;
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] > aritmetickaSredina)
+		{
+			brojac++;
+			sumaArt += niz[i];
+		}
+	}
+
+	stampajvektor(niz);
+	std::cout << std::endl;
+
+	std::cout << "Aritmeticka sredina je " << aritmetickaSredina << "\nBroj clanova koji su veci od Aritmeticke sredine su: " << brojac << " i njihova suma je " << sumaArt;
+}
+
+/*148. Izračunati proizvod pozitivnih članova niza 
+deljivih sa 4.*/
+void zadatak148()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	int proizvod = 1;
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] > 0)
+		{
+			proizvod *= niz[i];
+		}
+			
+	}
+	stampajvektor(niz);
+	std::cout << "Proizvod pozitivnih brojeva u nizu je: " << proizvod;
+}
+
+/*149. Učitati članove niza. Množiti članove niza sve 
+dok je proizvod manji od 541.*/
+void zadatak149()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = { 15, 14, 2 , 41 , 1 , 5 };
+	stampajvektor(niz);
+	int proizvod = 1;
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		while (proizvod < 5410)
+		{
+			proizvod *= niz[i];
+			break;
+		}
+
+	}
+	std::cout << "Proizvod je: " << proizvod;
+}
+
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
 		   *  
 		  ***
@@ -4186,8 +4354,7 @@ void zadatakBonus()
 				std::cout << '*';
 		
 		}
-		
-		std::cout << std::endl;
+	
 	}
 	
 	
@@ -4225,6 +4392,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak145();
+	zadatak149();
 	return 0;
 }

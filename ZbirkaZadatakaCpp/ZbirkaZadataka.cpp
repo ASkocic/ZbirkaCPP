@@ -4284,10 +4284,10 @@ void zadatak147()
 	stampajvektor(niz);
 	std::cout << std::endl;
 
-	std::cout << "Aritmeticka sredina je " << aritmetickaSredina << "\nBroj clanova koji su veci od Aritmeticke sredine su: " << brojac << " i njihova suma je " << sumaArt;
+std::cout << "Aritmeticka sredina je " << aritmetickaSredina << "\nBroj clanova koji su veci od Aritmeticke sredine su: " << brojac << " i njihova suma je " << sumaArt;
 }
 
-/*148. Izračunati proizvod pozitivnih članova niza 
+/*148. Izračunati proizvod pozitivnih članova niza
 deljivih sa 4.*/
 void zadatak148()
 {
@@ -4304,36 +4304,227 @@ void zadatak148()
 		{
 			proizvod *= niz[i];
 		}
-			
+
 	}
 	stampajvektor(niz);
 	std::cout << "Proizvod pozitivnih brojeva u nizu je: " << proizvod;
 }
 
-/*149. Učitati članove niza. Množiti članove niza sve 
+/*149. Učitati članove niza. Množiti članove niza sve
 dok je proizvod manji od 541.*/
+
+std::vector<int> generisiPozitivanNiz(int n)
+{
+	std::vector<int> niz;
+	niz.resize(n);
+	for (int i = 0; i < n; i++)
+	{
+		niz[i] = ((rand() % 100) / 10) + 1;
+	}
+	return niz;
+}
+
 void zadatak149()
 {
 	int n = 0;
 	std::cout << "Unesite n: ";
 	std::cin >> n;
 
-	std::vector<int> niz = { 15, 14, 2 , 41 , 1 , 5 };
+	std::vector<int> niz = generisiPozitivanNiz(n);
 	stampajvektor(niz);
+	std::cout << "\n";
 	int proizvod = 1;
+	int i = 0;
 
-	for (int i = 0; i < niz.size(); i++)
+	while (proizvod * niz[i] < 5410)
 	{
-		while (proizvod < 5410)
-		{
-			proizvod *= niz[i];
-			break;
-		}
-
+		proizvod *= niz[i];
+		std::cout << niz[i] << " ";
+		i++;
 	}
+
+
 	std::cout << "Proizvod je: " << proizvod;
 }
 
+/*150. Učitati niz od 20 brojeva i ispisati najveci i
+najmanji broj u nizu.*/
+void zadatak150()
+{
+	std::vector<int> niz = generisiNasumicniNizDuzineN(20);
+	stampajvektor(niz);
+
+	int najmanji = niz[0];
+	int najveci = niz[0];
+
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] > najveci)
+		{
+			najveci = niz[i];
+		}
+		else if (niz[i] < najmanji)
+		{
+			najmanji = niz[i];
+		}
+	}
+	std::cout << "\nNajveci broj u nizu je : " << najveci;
+	std::cout << "\nNajmanji broj u nizu je : " << najmanji;
+}
+
+/*151. Učitati niz X od n članova. Nadji maksimum od
+članova sa parnim indeksima.*/
+void zadatak151()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> nizX = generisiNasumicniNizDuzineN(n);
+	stampajvektor(nizX);
+
+	int maksimum = nizX[0];
+
+	for(int i = 0; i < nizX.size(); i+=2)
+	{
+		if (nizX[i] > maksimum)
+		{
+			maksimum = nizX[i];
+		}
+	}
+	std::cout << "\nNajveci broj sa parnim indeksom je: " << maksimum;
+}
+
+/*152. Učitati niz X od n članova. Nadi minimum 
+i maksimum od članova sa neparnim indeksima.*/
+void zadatak152()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> nizX = generisiNasumicniNizDuzineN(n);
+	stampajvektor(nizX);
+
+	int minimum = nizX[1];
+	int maksimum = nizX[1];
+
+	for (int i = 1; i < nizX.size(); i+=2)
+	{
+		if (nizX[i] > maksimum)
+		{
+			maksimum = nizX[i];
+		}
+		else if (nizX[i] < minimum)
+		{
+			minimum = nizX[i];
+		}
+	}
+	std::cout << "\nNajveci broj u nizu sa neparnim indeksom je: " << maksimum;
+	std::cout << "\nNajmanji broj u nizu sa neparnim indeksom je: " << minimum;
+}
+
+/*153. Učitati članove niza. Ispisati: pozitivne, nule 
+pa negativne članove niza.*/
+void zadatak153()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<int> niz = generisiNasumicniNizDuzineN(n);
+	stampajvektor(niz); std::cout << std::endl;
+
+	std::cout << "\nPozitivni br. u nizu su: ";
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] > 0)
+		{
+			std::cout << niz[i] << " ";
+		}
+	}
+	std::cout << "\nNegativni br. u nizu su: ";
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] < 0)
+		{
+			std::cout << niz[i] << " ";
+		}
+
+	}
+	std::cout << "\nNule se nalaze na sledecim pozicijama: ";
+	for (int i = 0; i < niz.size(); i++)
+	{
+		if (niz[i] == 0)
+		{
+			std::cout << i << " ";
+		}
+
+	}
+}
+
+/*154. Učitati i ispisati dvodimenzionalni niz -
+matricu 2x3.*/
+void zadatak154()
+{
+	int niz[3][2];
+	for (int i = 0; i < 3; i++)
+	{
+		for (auto j = 0; j < 2; j++)
+		{
+			niz[i][j] = (rand() % 100)/5;
+		}
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			std::cout << niz[i][j] << " ";
+		}
+	    std::cout << std::endl;
+	}
+}
+
+/*155. Učitati i ispisati dvodimenzionalni niz -
+matricu nxn. Zatim ispisati članove niza koji su na 
+glavnoj dijagonali.*/
+void zadatak155()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(n);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (auto j = 0; j < n; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << matrica[i][i] << " ";
+	}
+}
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
 		   *  
 		  ***
@@ -4392,6 +4583,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak149();
+	zadatak155();
 	return 0;
 }

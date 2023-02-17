@@ -4467,21 +4467,15 @@ void zadatak153()
 matricu 2x3.*/
 void zadatak154()
 {
-	int niz[3][2];
-	for (int i = 0; i < 3; i++)
+	int niz[2][3];
+	for (int i = 0; i < 2; i++)
 	{
-		for (auto j = 0; j < 2; j++)
+		for (auto j = 0; j < 3; j++)
 		{
 			niz[i][j] = (rand() % 100)/5;
-		}
-	}
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 2; j++)
-		{
 			std::cout << niz[i][j] << " ";
 		}
-	    std::cout << std::endl;
+		std::cout << std::endl;
 	}
 }
 
@@ -4506,24 +4500,767 @@ void zadatak155()
 		for (auto j = 0; j < n; j++)
 		{
 			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
 		}
+		std::cout << std::endl;
+	}
+	std::cout << "Clanovi niza na glavnoj dijagonali su: ";
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << matrica[i][i] << " ";
+	}
+}
+
+/*156. Učitati i ispisati dvodimenzionalni niz -
+matricu 4x4. Zatim ispisati članove niza koji su
+iznad glavne dijagonale.*/
+void zadatak156()
+{
+	int matrica[4][4];
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 5;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::cout << "\nBrojevi iznad glavne dijagonale su: ";
+	for (int i = 0; i < 3; i++)   //znam da je j > i, kasno sam provalio :( 
+	{
+		for (int j = 1 + i; j < 4; j++)
+		{
+			std::cout << matrica[i][j] << " ";
+		}
+
+	}
+}
+/*157. Učitati i ispisati dvodimenzionalni niz -
+kvadratnu matricu nxn. Zatim ispisati članove niza
+koji su ispod glavne dijagonale*/
+void zadatak157()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(n);
 	}
 
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
+			matrica[i][j] = (rand() % 100) / 10;
 			std::cout << matrica[i][j] << " ";
 		}
 		std::cout << std::endl;
 	}
 
-	std::cout << std::endl;
+	std::cout << "Brojevi ispod glavne dijagonale su: ";
 
 	for (int i = 0; i < n; i++)
 	{
-		std::cout << matrica[i][i] << " ";
+		for (int j = 0; j < n; j++)
+		{
+			if (i > j)
+			{
+				std::cout << matrica[i][j] << " ";
+			}
+		}
 	}
+}
+
+/*158. Učitati dvodimenzionalni niz. Ispisati parne
+članove matrice.*/
+void zadatak158()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(m);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(n);
+	}
+
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "Parni clanovi matrice su: ";
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (matrica[i][j] % 2 == 0)
+			{
+				std::cout << matrica[i][j] << " ";
+			}
+		}
+	}
+}
+
+/*159. Učitati dvodimenzionalni niz. Ispisati članove 
+matrice koji su deljivi sa 3.*/
+void zadatak159()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "Clanovi matrice deljivi sa 3 su: ";
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (matrica[i][j] % 3 == 0)
+			{
+				std::cout << matrica[i][j] << " ";
+			}
+		}
+	}
+}
+
+/*160. Učitati dvodimenzionalni niz i formirati drugi 
+čiji je opšti član: y[i][j] = x[i][j] (isti nizovi). Ispisati oba 
+niza.*/
+void zadatak160()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X: \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaY[i][j] = matricaX[i][j];
+			std::cout << matricaY[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*161. Učitati dva dvodimenzionalna niza i formirati 
+tredi čiji je opšti član: cij = xij + yij.*/
+void zadatak161()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X : \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaY[i][j] = (rand() % 100) / 10;
+			std::cout << matricaY[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::vector<std::vector<int>> matricaC;
+	matricaC.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaC[i].resize(matricaX[i].size());
+	}
+	
+	std::cout << "Matrica C = X + Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaC[i][j] = matricaX[i][j] + matricaY[i][j];
+			std::cout << matricaC[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*162. Učitati dva dvodimenzionalna niza i formirati 
+treci čiji je opšti član: cij = xij + 2yij.*/
+void zadatak162()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X : \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaY[i][j] = (rand() % 100) / 10;
+			std::cout << matricaY[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::vector<std::vector<int>> matricaC;
+	matricaC.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaC[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica C = X + 2Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaC[i][j] = matricaX[i][j] + (2 * matricaY[i][j]);
+			std::cout << matricaC[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*163. Učitiati dvodimenzionalni niz - matricu nxm.
+Izračunati i ispisati sumu svih elemenata niza A[5, 5]*/
+void zadatak163()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	int zbir = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			zbir += matrica[i][j];
+		}
+	}
+	std::cout << "Zbir svih elemenata matrice je: " << zbir;
+}
+
+/*164. Učitati dvodimenzionalni niz - matricu nxm. 
+Prebrojati i ispisati koliko ima elemenata matrice 
+koju su 1.*/
+void zadatak164()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	int brojac = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (matrica[i][j] == 1)
+			{
+				brojac++;
+			}
+		}
+	}
+	std::cout << "Broj jedinica u matrici je: " << brojac;
+}
+/*165. Učitati dvodimenzionalni niz - matricu nxm. 
+Izračunati i ispisati aritmetičku sredinu elemenata 
+niza deljivih sa 2 (parni).*/
+void zadatak165()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	double zbir = 0;
+	double brojac = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (matrica[i][j] % 2 == 0)
+			{
+				zbir += matrica[i][j];
+				brojac++;
+			}
+		}
+	}
+	std::cout << "Zbir parnih elemenata matrice je: " << zbir << std::endl;
+	std::cout << "Aritmeticka sredina matrice je: " << zbir / brojac;
+}
+
+/*166. Učitati dvodimenzionalni niz - matricu nxm. 
+Nadi i ispisati najmanji elemenat matrice X[n,m]*/
+void zadatak166()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	int najmanji = matrica[0][0];
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (matrica[i][j] < najmanji)
+			{
+				najmanji = matrica[i][j];
+			}
+		}
+	}
+	std::cout << "Najmanji element u matrici je: " << najmanji;
+}
+
+/*167. Učitati dvodimenzionalni niz - matricu nxm. 
+Formirati novi jednodimenzionalni niz čije članove 
+čine najmanji članovi polja po redovima.*/
+void zadatak167()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matrica;
+	matrica.resize(n);
+	for (int i = 0; i < matrica.size(); i++)
+	{
+		matrica[i].resize(m);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matrica[i][j] = (rand() % 100) / 10;
+			std::cout << matrica[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::vector<int> nizNajmanjihPoRedovima;
+	for (int i = 0; i < n; i++)
+	{
+		int pp = matrica[i][0];
+		for (int j = 0; j < m; j++)
+		{
+			if (matrica[i][j] < pp)
+				pp = matrica[i][j];
+		}
+		nizNajmanjihPoRedovima.push_back(pp);
+	}
+	std::cout << "Niz najmanjih elemenata po redovima je: ";
+	for (int i = 0; i < nizNajmanjihPoRedovima.size(); i++)
+	{
+		std::cout << nizNajmanjihPoRedovima[i] << " ";
+	}
+}
+
+/*168. Učitati dvodimenzionalni niz X i formirati 
+drugi dvodimenzionalni niz Y čiji je opšti član: y[i][j] = 
+x[j][i] (elementi i-tog reda matrice X se razmenjuju sa 
+elementima i-te kolone matrice Y). Ispisati oba 
+niza.*/
+void zadatak168()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X: \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaY[i][j] = matricaX[j][i];
+			std::cout << matricaY[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*169. Učitati dvodimenzionalni niz i formirati drugi 
+čiji je opšti član: y ij = -xij (negativne vrednosti 
+članova niza). Ispisati oba niza.*/
+void zadatak169()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X: \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			matricaY[i][j] = matricaX[i][j] * -1;
+			std::cout << matricaY[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*170. Učitati dvodimenzionalni niz i formirati drugi čiji je opšti član: yij = xij za i+j parno, inače je yij = 2.
+*/
+void zadatak170()
+{
+	int n = 0;
+	std::cout << "Unesite n: ";
+	std::cin >> n;
+
+	int m = 0;
+	std::cout << "Unesite m: ";
+	std::cin >> m;
+
+	std::vector<std::vector<int>> matricaX;
+	matricaX.resize(n);
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaX[i].resize(m);
+	}
+
+	std::cout << "Matrica X: \n";
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			matricaX[i][j] = (rand() % 100) / 10;
+			std::cout << matricaX[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<std::vector<int>> matricaY;
+	matricaY.resize(matricaX.size());
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		matricaY[i].resize(matricaX[i].size());
+	}
+
+	std::cout << "Matrica Y: \n";
+	for (int i = 0; i < matricaX.size(); i++)
+	{
+		for (int j = 0; j < matricaX[i].size(); j++)
+		{
+			if ((i + j) % 2 == 0)
+			{
+				matricaY[i][j] = matricaX[i][j];
+				std::cout << matricaY[i][j] << " ";
+			}
+			else
+			{
+				matricaY[i][j] = 2;
+				std::cout << matricaY[i][j] << " ";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*171. Učitati, ispisati niz znakova.*/
+void zadatak171()
+{
+	std::string str;
+	std::cout << "Unesite niz" << std::endl;
+	std::cin >> str;
+	std::cout << "Uneti niz je: " << str;
+}
+
+/*172. Učitati niz znakova . Ispisati znak , i redni broj 
+znaka , na osnovu redosleda unošenja.*/
+void zadatak172()
+{
+	std::string str;
+	std::cout << "Unesite niz" << std::endl;
+	std::cin >> str;
+	std::cout << "Uneti niz je: " << str;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		std::cout << std::endl <<  i << "-i znak je " << str[i];
+	}
+}
+
+/*173. Učitati niz znakova. Ispisati znak, i redni broj znaka 
+datog stringa unazad.*/
+void zadatak173()
+{
+	std::string str;
+	std::cout << "Unesite niz" << std::endl;
+	std::cin >> str;
+	std::cout << "Uneti niz je: " << str;
+
+	for (int i = str.size() - 1; i >= 0; i--)
+	{
+		std::cout << std::endl << i << "-i znak je " << str[i];
+	}
+}
+
+/*174. Svaku reč učitanog stringa ispisati u novom redu.*/
+void zadatak174()
+{
+
 }
 /*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
 		   *  
@@ -4583,6 +5320,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak155();
+	zadatak173();
 	return 0;
 }

@@ -4,6 +4,7 @@
 #include <numeric>
 #include <iterator>
 #include <algorithm>
+#include <string>
 //using namespace std;
 
 //void funkcija(int n)
@@ -5222,9 +5223,9 @@ void zadatak170()
 void zadatak171()
 {
 	std::string str;
-	std::cout << "Unesite niz" << std::endl;
+	std::cout << "Unesite niz znakova" << std::endl;
 	std::cin >> str;
-	std::cout << "Uneti niz je: " << str;
+	std::cout << "Uneti string je: " << str;
 }
 
 /*172. Učitati niz znakova . Ispisati znak , i redni broj 
@@ -5232,9 +5233,9 @@ znaka , na osnovu redosleda unošenja.*/
 void zadatak172()
 {
 	std::string str;
-	std::cout << "Unesite niz" << std::endl;
-	std::cin >> str;
-	std::cout << "Uneti niz je: " << str;
+	std::cout << "Unesite niz znakova" << std::endl;
+	std::getline(std::cin, str);
+	std::cout << "Uneti string je: " << str;
 
 	for (int i = 0; i < str.size(); i++)
 	{
@@ -5247,9 +5248,9 @@ datog stringa unazad.*/
 void zadatak173()
 {
 	std::string str;
-	std::cout << "Unesite niz" << std::endl;
-	std::cin >> str;
-	std::cout << "Uneti niz je: " << str;
+	std::cout << "Unesite niz znakova" << std::endl;
+	std::getline(std::cin, str);
+	std::cout << "Uneti string je: " << str;
 
 	for (int i = str.size() - 1; i >= 0; i--)
 	{
@@ -5260,9 +5261,176 @@ void zadatak173()
 /*174. Svaku reč učitanog stringa ispisati u novom redu.*/
 void zadatak174()
 {
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+	
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] != ' ')
+		{
+			std::cout << str[i];
+		}
+		else
+		{
+			std::cout << std::endl;
+		}
+	}
+}
+
+/*175. Prebrojati broj velikih slova u učitanom
+stringu.*/
+void zadatak175()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	int brojac = 0;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] >= 65 && str[i] <= 90)   //ASCII code  izmedju 65 i 90
+		{
+			brojac++;
+		}
+	}
+	std::cout << "Broj velikih slova u stringu je: " << brojac;
+}
+
+/*176. Prebrojati broj velikih slova i broj malih slova
+u učitanom stringu.*/
+void zadatak176()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	int brojacVelikih = 0;
+	int brojacMalih = 0;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] >= 65 && str[i] <= 90)   
+		{
+			brojacVelikih++;
+		}
+		else if (str[i] >= 97 && str[i] <= 122)
+		{
+			brojacMalih++;
+		}
+	}
+	std::cout << "Broj velikih slova u stringu je: " << brojacVelikih << " a broj malih slova je: " << brojacMalih;
+}
+
+/*177. Učitati string i odredjeni znak. Ispisati koliko
+puta se taj znak pojavljuje u upisanom stringu.*/
+void zadatak177()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	char karakter;
+	std::cout << "Unesite karakter: ";
+	std::cin >> karakter;
+
+	int brojac = 0;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == karakter)   
+		{
+			brojac++;
+		}
+	}
+	std::cout << "Karakter koji ste uneli se ponavlja: " << brojac << " u stringu.";
 
 }
-/*Bonus zadatak: Za dato n ( gde je n broj redova), napraviti: 
+
+/*178. Učitati string i prebrojati reči u stringu.*/
+void zadatak178()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	int brojac = 1;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == ' ')
+		{
+			brojac++;
+		}
+	}
+	std::cout << "Broj reci je: " << brojac; //pod uslovom da je pravilo ispisano
+}
+
+/*179. Učitati string i prebrojati operatore u stringu
+(+,-,*,/).*/
+void zadatak179()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	int brojac = 0;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == '*')
+		{
+			brojac++;
+		}
+		else if (str[i] == '-')
+		{
+			brojac++;
+		}
+		else if (str[i] == '+')
+		{
+			brojac++;
+		}
+		else if (str[i] == '/')
+		{
+			brojac++;
+		}
+	}
+	std::cout << "Broj operatora je: " << brojac; 
+}
+
+/*180. Učitati string i prebrojati znake interpunkcije
+u stringu (, . ? !).*/
+void zadatak180()
+{
+	std::string str;
+	std::cout << "Unesite niz karaktera" << std::endl;
+	std::getline(std::cin, str);
+
+	int brojac = 0;
+
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == ',')
+		{
+			brojac++;
+		}
+		else if (str[i] == '.')
+		{
+			brojac++;
+		}
+		else if (str[i] == '!')
+		{
+			brojac++;
+		}
+		else if (str[i] == '?')
+		{
+			brojac++;
+		}
+	}
+	std::cout << "Broj znakova interpunkcije je: " << brojac;
+}
+/*Bonus zadatak: Za dato n (gde je n broj redova), napraviti: 
 		   *  
 		  ***
 		 *****
@@ -5320,6 +5488,6 @@ void zadatakBonus()
 }
 int main()
 {
-	zadatak173();
+	zadatak179();
 	return 0;
 }

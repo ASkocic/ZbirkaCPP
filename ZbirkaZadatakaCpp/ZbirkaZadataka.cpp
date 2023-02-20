@@ -5430,64 +5430,94 @@ void zadatak180()
 	}
 	std::cout << "Broj znakova interpunkcije je: " << brojac;
 }
-/*Bonus zadatak: Za dato n (gde je n broj redova), napraviti: 
-		   *  
-		  ***
-		 *****
-		*******   
-      ............*/
-void zadatakBonus()
-{
-	int n = 0;
-	std::cout << "Uneti n: ";
-	std::cin >> n;
-	
-	for (int i = 0; i <= 2*n - i; i++)
-	{
-		std::cout << ' ';
-		for (int k = 0; k < n - i - 1 ; k++)
-		{
-				std::cout << '*';
-		
-		}
-	
-	}
-	
-	
-	/*  *
+
+	/*Bonus zadatak 1:  
+		*
 		**
 		***
 		****
 		*****
-	
-	for (int i = 0; i < n; i++)
-	{
-
-		for (int k = 0; k < i + 1; k++)
-		{
-			std::cout << '*';
-		}
-		std::cout << std::endl;
-	}
 	*/
-	/*  *****
+	void zadatakBonus1()
+	{
+		int n = 0;
+		std::cout << "Uneti n: ";
+		std::cin >> n;
+
+		for (int i = 0; i < n; i++)
+		{
+
+			for (int k = 0; k < i + 1; k++)
+			{
+				std::cout << '*';
+			}
+			std::cout << std::endl;
+		}
+	}
+	
+	/*  Bonus zadatak 2:
+		*****
 		****
 		***
 		**
 		*
-	for (int i = 0; i < n; i++)
-	{
-		
-		for (int k = i; k < n; k++)   || k = 0; k < n- i; k++
-		{
-			std::cout << '*';
-		}
-		std::cout << std::endl;
-	}
 	*/
-}
+	void zadatakBonus2()
+	{
+		int n = 0;
+		std::cout << "Uneti n: ";
+		std::cin >> n;
+
+		for (int i = 0; i < n; i++)
+		{
+
+			for (int k = i; k < n; k++) // k = 0; k < n - i; k++
+			{
+				std::cout << '*';
+			}
+			std::cout << std::endl;
+		}
+	}
+	/*Bonus zadatak 3: Za dato n (gde je n broj redova), napraviti:
+		   *
+		  ***
+		 *****
+		*******
+	  ............*/
+	void zadatakBonus3()
+	{
+		int n = 0;
+		std::cout << "Uneti n: ";
+		std::cin >> n;
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int k = 0; k <= n - i; k++)
+			{
+				std::cout << ' ';
+			}
+			for (int j = 0; j <= 2 * i; j++)
+			{
+				std::cout << '*';
+			}
+			std::cout << std::endl;
+		}
+		
+		/*for (int i = 0; i < n; i++)
+		{
+			for (int k = 0; k <= n - i; k++)
+			{
+				std::cout << ' ';
+			}
+			for (int j = 0; j <= 2 * i; j++)
+			{
+				std::cout << '*';
+			}
+			std::cout << std::endl;
+		}*/
+	}
 int main()
 {
-	zadatak179();
+	zadatakBonus3();
 	return 0;
 }

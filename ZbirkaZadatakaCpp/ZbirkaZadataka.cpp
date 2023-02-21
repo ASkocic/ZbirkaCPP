@@ -7,145 +7,7 @@
 #include <string>
 //using namespace std;
 
-//void funkcija(int n)
-//{
-//	int niz[100];
-//
-//	for (int j = 0; j < 100; j++)
-//	{
-//		niz[j] = 0;
-//	}
-//
-//	int pomocniBrojac = 99;
-//	while (n > 0)
-//	{
-//		int ostatak = n % 2;
-//		n = n / 2;
-//		niz[pomocniBrojac] = ostatak;
-//		pomocniBrojac -= 1;
-//	}
-//
-//	for (int i = pomocniBrojac + 1; i < 100; i++)
-//	{
-//		std::cout << niz[i];
-//	}
-//
-//}
 
-
-#pragma region komentari
-//string ime = "";
-//string prezime = "";
-//int brojGodina = 0;
-//int godinaRodjenja = 0;
-
-//cout << "Unesite svoje ime " << endl;
-//cin >> ime;
-//cout << "Unesite svoje prezime " << endl;
-//cin >> prezime;
-//cout << "Unesite broj godina" << endl;
-//cin >> brojGodina;
-//cout << "Unesite godinu rodjenja " << endl;
-//cin >> godinaRodjenja;
-//cout << "Moje ime je: " << ime << " Moje prezime je: " << prezime << " Moj broj godina je: " << brojGodina << " Godina rodjenja je: " << godinaRodjenja;
-
-//if (brojGodina < 18) {
-//	cout << "NE SKOCICU!";
-//}
-//else if (brojGodina >= 18 && brojGodina < 26) {
-//	cout << " TOVARI TO SKOCICU";
-//}
-//else{
-//	cout << " PREPUSTI TO CICI SKOCICU";
-//}
-
-//char karakter = ' ';
-//while (karakter != '0') {
-//	cin >> karakter;
-//	cout << karakter << endl;
-//
-//			
-//}
-
-//float Pi = 0.0f;
-//int repeticija = 1000000;
-
-//for (int i = 1; i < repeticija; i++)
-//{
-//	Pi = Pi + 4*(pow(-1, i + 1) * 1.0f / (2.0f * i - 1.0f));
-//}
-//cout << Pi;
-
-//int result = sum(10, 20);
-//cout << result;
-
-//stampaj2(6);
-
-//GenerisiDomaci(0, 151, 3);
-//float x = 0.0f;
-//float y = 0.0f;
-//float z = 0.0f;
-
-//cin >> x >> y;
-//if (x > y)
-//{
-//
-//	z = x;
-//	x = y;
-//	y = z;
-//	
-//}
-//cout << x << y << endl;
-
-//float x = 0.0f;
-//float y = 0.0f;
-//float z = 0.0f;
-//float zbir = 0.0f;
-//
-//cin >> x >> y >> z;
-//if (x <= y && y <= z)
-//{
-//	zbir = x + y;
-//
-//}
-//else if (z <= x && y <= x)
-//{
-//	zbir = z + y;
-//}
-//else
-//{
-//	zbir = x + z;
-//}
-// cout << zbir;
-
-//
-//vector<int> vec1 = KreirajVektorSaTastature();
-//float zbir = 0;
-//for (int i = 0; i < vec1.size(); i++)
-//{
-//	zbir = zbir + vec1[i];
-//}
-//
-//float srednjaVrednost = zbir / vec1.size();
-//
-//cout << "SREDNJA VREDNOST : " << srednjaVrednost << endl;
-//
-//int indexNajblizeg = 0;
-//int najblizi = vec1[0];
-//float rastojanje = abs(srednjaVrednost - najblizi);
-//
-//for (int i = 0; i < vec1.size(); i++)
-//{
-//	if (abs(srednjaVrednost - vec1[i]) < rastojanje)
-//	{
-//		rastojanje = abs(srednjaVrednost - vec1[i]);
-//		indexNajblizeg = i;
-//		najblizi = vec1[i];
-//	}
-//}
-//
-//cout << indexNajblizeg << " " << najblizi << endl;
-#pragma endregion
 
 int sum(int n, int m)
 {
@@ -156,49 +18,7 @@ int sum(int n, int m)
 	}
 	return s;
 }
-//
-//void stampaj()
-//{
-//	for (int x = 0; x < 5 && x != 3; x++)
-//	{
-//		std::cout << x;
-//	}
-//}
-//
-//void stampaj1(int n)
-//{
-//	for (int y = 1; y <= n * n; y++)
-//	{
-//		std::cout << y << " ";
-//	}
-//}
-//
-//void stampaj2(int n)
-//{
-//	int result = sum(0, n);
-//	for (int y = 1; y <= result; y++)
-//	{
-//		std::cout << y << " ";
-//	}
-//}
-//
-//void stampajNiz(int niz[], int size)
-//{
-//	for (int i = 0; i < size; i++)
-//	{
-//		std::cout << niz[i] << std::endl;
-//	}
-//}
-//
-//
-//void GenerisiDomaci(int pocetni, int krajnji, int brojZadatakaZaDomaci)
-//{
-//	for (int i = 0; i < brojZadatakaZaDomaci; i++)
-//	{
-//		std::cout << rand() % krajnji << std::endl;
-//	}
-//}
-//
+
 template <typename f>
 void stampajvektor(std::vector<f> vec)
 {
@@ -207,30 +27,7 @@ void stampajvektor(std::vector<f> vec)
 		std::cout << vec[i] << " ";
 	}
 }
-//
-//template <typename F>
-//std::vector<F> KreirajVektorSaTastature()
-//{
-//	vector<F> vec1;
-//
-//	int unos;
-//
-//	while (true)
-//	{
-//		cin >> unos;
-//		if (unos == -1)
-//		{
-//			break;
-//		}
-//		else
-//		{
-//			vec1.push_back(unos);
-//		}
-//	}
-//
-//
-//	return vec1;
-//}
+
 
 
 
@@ -270,8 +67,6 @@ void zadatak2()
 	int ostatak = y % x;
 
 	std::cout << "kolicnik je : " << kolicnik << " a ostatak je " << ostatak << std::endl;
-
-
 }
 
 /*3. Napisati program koji unetu veličinu u galonima
@@ -284,13 +79,7 @@ void zadatak3()
 	std::cin >> l;
 
 	l = l * galon;
-
-
 	std::cout << "Rezultat je: " << l << " litara." << std::endl;
-
-
-
-
 }
 
 /*4. Automobil sa punim rezervoarom kapaciteta V litara
@@ -308,7 +97,6 @@ void zadatak4()
 
 	float potrosnja = kapacitet * 100 / predjeniPut;
 	std::cout << "Potrosnja je: " << potrosnja << " litara na 100km." << std::endl;
-
 }
 
 /*5. Napisati program kojim se računa hipotenuza i
@@ -327,9 +115,6 @@ void zadatak5()
 	float povrsina = (a * b) / 2;
 	float c = sqrt(a * a + b * b);
 	std::cout << "Povrsina trougla je: " << povrsina << " a hipotenuza: " << c << std::endl;
-
-
-
 }
 
 /*6. Napisati program koji prevodi težinu iz funti u kg
@@ -342,9 +127,6 @@ void zadatak6()
 	std::cin >> kg;
 	kg = kg * funta;
 	std::cout << "Tezina je: " << kg << " kg" << std::endl;
-
-
-
 }
 
 /*7. Napisati program koji izračunava cenu porcije
@@ -356,9 +138,6 @@ void zadatak7()
 	std::cin >> tezinaSira;
 	float cenaSira = 0.165 * tezinaSira;
 	std::cout << "Cena sira je: " << cenaSira << std::endl;
-
-
-
 }
 
 /*8. Napisati program koji pomaže kasirki da obračuna
@@ -381,13 +160,10 @@ void zadatak8()
 	{
 		std::cout << "Vas kusur je: " << kusur << std::endl;
 	}
-
 	else
 	{
 		std::cout << "NEDOVOLJNO NOVCA!!!" << std::endl;
 	}
-
-
 }
 
 /*9. Napisati program kojim se računa potrebno
@@ -409,10 +185,6 @@ void zadatak9()
 	int sekund = 0;
 
 	std::cout << "Potrebno vreme je " << sat << " sati, " << minut << " minuta, " << std::endl;
-
-
-
-
 }
 
 /*10. Napisati program koji izračunava obim i površinu
@@ -438,9 +210,6 @@ void zadatak10()
 	{
 		std::cout << "Obim pravougaonika je: " << obim << ", a povrsina: " << povrsina << std::endl;
 	}
-
-
-
 }
 
 /*11. Dat je ugao u stepenima na dve decimale.
@@ -455,7 +224,6 @@ void zadatak11()
 	int stepen = ugao;
 	float minuti = (ugao - stepen) * 60;
 	std::cout << "Ugao ima: " << stepen << " stepeni" << " i " << minuti << " minuta." << std::endl;
-
 }
 
 /*12. Napisati program kojim se vrši preračunavanje
@@ -477,8 +245,6 @@ void zadatak12()
 
 	float iznos = dolar * (kursDolar / kursEuro);
 	std::cout << iznos << " eura" << std::endl;
-
-
 }
 
 /*13. Napisati program koji rešava slededi matematički
@@ -509,8 +275,6 @@ void zadatak14()
 	//sam sam dosao do racuna :)
 
 	std::cout << a << " " << b << " " << c << std::endl;
-
-
 }
 
 /*15. Napisati program koji datom cetvorocifrenom
@@ -531,6 +295,7 @@ void zadatak15()
 	//cout << a << " " << b << " " << c << " " << d << endl;
 	std::cout << "Zbir je: " << zbir << std::endl;
 }
+
 /*16. Izračunati dijagonale d i D kocke (za poznatu
 stranicu a)*/
 void zadatak16()
@@ -684,7 +449,6 @@ void zadatak22()
 	{
 		std::cout << "Ne postoji kvadratni koren negativnog broja!!!";
 	}
-
 }
 
 /*23. Napisati program koji zavisno od učitane
@@ -706,9 +470,6 @@ void zadatak23()
 	{
 		std::cout << "Funkcija nije definisana!!!";
 	}
-
-
-
 }
 
 /*24. Napisati program koji učitava dva broja I
@@ -761,8 +522,6 @@ void zadatak25()
 	{
 		std::cout << "Ni jedan od njih nije jednak zbiru preostala dva!";
 	}
-
-
 }
 
 /*26. Napisti niz naredbi kojim se sumiraju samo
@@ -1065,9 +824,9 @@ ona prestupna. Po gregorijanskom kalendaru
 prestupne godine odredjuju se na slededi način:
 -ako je godina deljiva sa 400,prestupna je (npr.2000
 godina je prestupna)
--ako godina nije deljiva sa 400,ali je deljiva sa
+-ako godina nije deljiva sa 400, ali je deljiva sa
 100,nije prestupna (npr.1900. godina nije prestupna)
--ako godina nije deljiva sa 100,ali je deljiva sa
+-ako godina nije deljiva sa 100, ali je deljiva sa
 4,prestupna je (npr.2004 godina je prestupna)
 -ako godina nije deljiva nije 100 deljiva sa 4,nije
 prestupna (npr.2001. nije prestupna)*/
@@ -1115,7 +874,6 @@ void zadatak35()
 	{
 		std::cout << "a mora biti razlicit od 0";
 	}
-
 }
 
 /*36. Napisati program kojim se dati brojevi a,b i c
@@ -1148,7 +906,6 @@ void zadatak36()
 		b = abs(b);
 		c = abs(c);
 		std::cout << "Vrednost a je: " << a << " Vrednost b je: " << b << " Vrednost c je: " << c;
-
 	}
 }
 
@@ -1178,9 +935,6 @@ void zadatak37()
 		minA = atomK / 4;
 	}
 	std::cout << "Moze se napraviti " << minA << " molekula sumporne kiseline." << std::endl;
-
-
-
 }
 
 /*38. Ako se od odsečaka sa dužinama x,y,z može
@@ -1234,7 +988,6 @@ void zadatak39()
 		y = x * x;
 	}
 	std::cout << "Vrednost funkcije je: " << y;
-
 }
 
 /*40. Napisati program kojim se ispisuje da li su dati
@@ -1280,8 +1033,8 @@ void zadatak41()
 	{
 		std::cout << a << " " << b;
 	}
-
 }
+
 /*42. Napisati program kojim se vrednosti tri broja
 premeštaju tako da važi poredak A≤B≤C*/
 void zadatak42()
@@ -1339,8 +1092,6 @@ void zadatak43()
 		p = a + b;
 	}
 	std::cout << p;
-
-
 }
 
 /*44. .Napisati naredbu uslovnog prelaska kojom se za
@@ -1375,7 +1126,6 @@ void zadatak44()
 		y = 2 * x;
 	}
 	std::cout << "Vrednost y je: " << y;
-
 }
 
 /*45. Napisati program koji za tri uneta broja A,B,C
@@ -1560,11 +1310,8 @@ void zadatak50()
 	if (c > 3 && c < 7)
 	{
 		zbir = zbir + c;
-
 	}
-
 	std::cout << "Zbir je: " << zbir;
-
 }
 
 /*51. Napisati program koji računa ukupan broj poena učenika,tako što korisnik unosi svoj uspeh četiri školske
@@ -1603,12 +1350,9 @@ void zadatak51()
 	{
 		std::cout << "Pogresili ste u unosu podataka!";
 	}
-
-
 }
 
-
-/*52. Dodeliti vrednost max vedem od dva uneta
+/*52. Dodeliti vrednost max vecem od dva uneta
 broja.*/
 void zadatak52()
 {
@@ -1620,17 +1364,16 @@ void zadatak52()
 
 	switch (x >= y)
 	{
-	case true: {
+	case true: 
+		{
 		max = x;
 		std::cout << "Maksimalna vrednost je: " << max;
-	}   break;
-	case false: {
+		}   break;
+	case false: 
+		{
 		max = y;
 		std::cout << "Maksimalna vrednost je: " << max;
-
-	}
-
-
+		}
 	}
 }
 
@@ -1651,8 +1394,6 @@ void zadatak53()
 	case 4: {std::cout << "Vrlo dobar"; break; }
 	case 5: {std::cout << "Odlican"; break; }
 	default: {std::cout << "Pogresan unos ocene!"; }
-
-
 	}
 }
 
@@ -1674,8 +1415,6 @@ void Zadatak54()
 	case 6: {std::cout << "Petak"; break; }
 	case 7: {std::cout << "Petak"; break; }
 	default: {std::cout << "Pogresan unos rednog broja dana!"; }
-
-
 	}
 }
 
@@ -1734,17 +1473,12 @@ void zadatak56()
 		{
 			std::cout << "Greska!";
 		}
-
-
-
 	}
 	case 4:
 	case 6:
 	case 8:
 	case 10:
 	case 12: {std::cout << "Dati mesec ima 30 dana."; break; }
-
-
 	}
 }
 
@@ -1759,7 +1493,6 @@ void zadatak57()
 	int geometrijskoTelo = 0;
 	std::cin >> geometrijskoTelo;
 	int povrsina = 0;
-
 
 	switch (geometrijskoTelo)
 	{
@@ -1925,7 +1658,6 @@ void zadatak60()
 	}
 
 	}
-
 }
 
 /*61. Napisati program kojim se ispisuju velika slova
@@ -1976,7 +1708,6 @@ void zadatak63()
 			std::cout << i << " ";
 		}
 	}
-
 }
 
 /*64. Sa tastature se unose 10 brojeva.Napisati
@@ -2028,7 +1759,6 @@ void zadatak65()
 		std::cout << imeRadnika << "\nBruto zarada je: " << brutoZarada << "\nIznos poreza je: " << iznosPoreza <<
 			"\nIznos doprinosa je: " << iznosDoprinosa << "\nNeto zarada je: " << netoZarada << std::endl;
 	}
-
 }
 
 /*66. Napisati program kojim se za dato n izračunava
@@ -2045,7 +1775,6 @@ void zadatak66()
 	//	proizvod *= n;
 	//	n--;
 	//}
-
 
 	for (int i = 1; i <= n; i++)
 	{
@@ -2129,7 +1858,6 @@ void zadatak69()
 	{
 		std::cout << "Uneti broj nije savrsen!";
 	}
-
 }
 
 /*70. Napisati program kojim se učitavaju ocene
@@ -2199,7 +1927,6 @@ void zadatak72()
 			maksTemp = temperatura;
 			redniBrojDana = i;
 		}
-
 	}
 	std::cout << "maksimalna temperatura je: " << maksTemp << " i bila je " << redniBrojDana << ". dana";
 }
@@ -2323,7 +2050,6 @@ void zadatak77()
 	std::cout << "Unesite broj n clanova reda:";
 	std::cin >> n;
 
-
 	for (int i = 1; i <= n; i++)
 	{
 		zbir += 1 / (float)i;
@@ -2340,7 +2066,6 @@ void zadatak78()
 	int n = 0;
 	std::cout << "Unesite broj n clanova reda:";
 	std::cin >> n;
-
 
 	for (int i = 1; i <= 2 * n - 1; i++)
 	{
@@ -2449,9 +2174,7 @@ void zadatak82a()
 	{
 		k *= x;
 		suma += i * k;
-
 	}
-
 	std::cout << "Suma je: " << suma;
 }
 
@@ -2486,14 +2209,12 @@ void zadatak84()
 
 	float proizvod = 1;
 
-
 	for (int i = 2; i <= n; i++)
 	{
 		proizvod *= (1 + 1 / (float)izracunajFaktorijel(i));
 	}
 
 	std::cout << "Proizvod je: " << proizvod;
-
 }
 
 /*85. Napisati program kojim se izračunava proizvod:
@@ -2511,7 +2232,6 @@ void zadatak85()
 	{
 		proizvod *= (1 + 1 / (float)i);
 	}
-
 	std::cout << "Proizvod je: " << proizvod;
 }
 
@@ -2526,8 +2246,6 @@ void zadatak86()
 	float suma = 0;
 	int faktorijel = 1;
 	float ukupanZbir = 0;
-
-
 
 	for (int i = 1; i <= n; i++)
 	{
@@ -2694,7 +2412,6 @@ void zadatak93()
 	}
 	suma = suma1 / suma2;
 	std::cout << suma;
-
 }
 /*94. Napisati program koji od korisnika učitava ceo broj n ≥ 3, a potom n realnih brojeva i utvrdjuje i štampa
 najvedi od tih brojeva kao i koliko se on puta pojavio. Npr za n=5 1,13 ; 2,56 ; 2.56; 3 ; 7,2; ispisuje da je
@@ -2745,8 +2462,6 @@ void zadatak95()
 
 	int suma = 0;
 	
-
-
 	for (int i = 0; i <= n; i++)
 	{
 		suma += sumaPrvihNBrojeva(i) / izracunajFaktorijel(i); //sumaPrvihNBrojeva() 73. zadatak, izracunajFaktorijal() 66.zadatak
@@ -2812,6 +2527,7 @@ void zadatak97()
 	}
 	std::cout << suma;
 }
+
 /*98. Napisati program kojim se nalazi suma svih
 trocifrenih brojeva čiji je zbir cifara paran broj.*/
 void zadatak98()
@@ -2823,7 +2539,6 @@ void zadatak98()
 	int cifraDesetica = 0;
 	int cifraJedinica = 0;
 	
-
 	for (int i = 100; i <= 999; i++)
 	{
 		cifraJedinica = i % 10;
@@ -2843,7 +2558,6 @@ void zadatak98()
 cifara.*/
 void zadatak99()
 {
-	
 	int proizvod = 0;
 	int cifraStotina = 0;
 	int cifraDesetica = 0;
@@ -2862,7 +2576,6 @@ void zadatak99()
 			std::cout << i << ", ";
 		}
 	}
-	
 }
 
 /*100. Napisati program kojim se za uneto n
@@ -2929,7 +2642,6 @@ void zadatak102()
 		std::cout << noviN;
 		break;
 	}
-	
 }
 
 /*103. Napisati program koji za dati broj n ispituje da 
@@ -2982,7 +2694,6 @@ void zadatak104()
 		}
 		n++;
 	}
-
 	std::cout << suma;
 }
 
@@ -3070,7 +2781,6 @@ void zadatak107()
 //}
 
 
-
 /*108. Napisati program kojim se odredjuje n-ti član 
 Fibonačijevog niza.Niz gde je novi član jednak zbiru 
 prethodna dva. 1,1,2,3,5,8,13,21,34,55,89 */
@@ -3129,7 +2839,6 @@ void zadatak110()
 		stepen++;
 	}
 	std::cout << "To je: " << i << ", " << stepen << ". stepen broja 2.";
-
 }
 
 /*111. Odrediti zbir neparnih prirodnih brojeva na 
@@ -3202,7 +2911,6 @@ void zadatak113()
 odredjuje sumu cifara broja n*/
 void zadatak114()
 {
-	
 	int n = 0;
 	std::cout << "Unesite vrednost n: ";
 	std::cin >> n;
@@ -3217,7 +2925,6 @@ void zadatak114()
 	
 	}
 	std::cout << "Suma cifara je: " << sumaCifara;
-	
 }
 
 /*115. Napisati program koji za dati prirodan broj n 
@@ -3327,7 +3034,6 @@ void zadatak117()
 		}
 		i++;
 	}
-
 	std::cout << "Maks je: " << max;
 }
 
@@ -3359,9 +3065,7 @@ void zadatak118()
 		{
 			prviElement = niz[i];
 			brojacElemenata = 1;
-		}
-		
-		
+		}	
 		i++;
 	}
 
@@ -3398,9 +3102,7 @@ void zadatak119()
 		}
 		prviElement = niz[i];
 		i++;
-		
 	}
-
 	std::cout << "U najduzoj seriji je " << pbrojac << " elementa";
 }
 /*120. Napisati program kojim se odredjuje broj 
@@ -3480,9 +3182,7 @@ void zadatak122()
 			brojSuglasnika++;
 		}
 	}
-
 	std::cout << brojPraznina << brojSamoglasnika << brojSuglasnika;
-
 }
 
 /*123. Napisati program kojim se štampaju svi 
@@ -3500,7 +3200,6 @@ void zadatak123()
 		std::cout << stepen << " ";
 		stepen *= 2;
 	}
-	
 }
 
 /*124. Napisati program kojim se od datog prirodnog 
@@ -3513,7 +3212,6 @@ void zadatak124()
 	std::cin >> n;
 
 	int inverz = 0;
-
 do
 {
 	inverz = (inverz * 10) + n % 10;
@@ -3521,7 +3219,6 @@ do
 }
 while (n != 0);
 std::cout << inverz;
-
 }
 
 /*125. Napisati program koji, korišcenjem repeat 
@@ -3537,7 +3234,6 @@ void zadatak125()
 	int suma = 0;
 	int brojacParnihBrojeva = 0;
 
-	
 	while (suma <= r)
 	{
 		suma += prviBroj;
@@ -3589,12 +3285,9 @@ std::vector<int> generisiNasumicniNizDuzineN(int n)
 	return niz;
 }
 
-
-
 /*127. Dat je niz n proizvoljnih realnih brojeva, 
 n<=100. Napisati program za izračunavanje sume 
 elemenata niza.*/
-
 void zadatak127()
 {
 	int n = 0;
@@ -3652,10 +3345,10 @@ void zadatak129()
 			maksimalnaVrednost = nizOdN[i];
 		}
 	}
-	
 	stampajvektor(nizOdN);
 	std::cout << "\nMax vrednost: " << maksimalnaVrednost;
 }
+
 /*130. Napisati program koji od korisnika učitava 
 ceo broj n, 1 ≤ n ≤ 5000 , potom n realnih brojeva i 
 odredjuje koliko njih je strogo vede od proseka svih 
@@ -3686,8 +3379,6 @@ void zadatak130()
 				brojacClanova++;
 			}
 		}
-		
-		
 		stampajvektor(nizOdN);
 		std::cout << "\nProsecna vrednost: " << prosecnaVrednost;
 		std::cout << "\nVece od proseka je " << brojacClanova << " clana/ova.";
@@ -3697,6 +3388,7 @@ void zadatak130()
 		std::cout << "Uneta vrednost n mora biti 1 <= n <=5000!!!";
 	}
 }
+
 /*131. Dat je prirodan broj N. Napisati program koji
 de generisati i odštampati niz cifara broja N, 
 počevši od cifre najmanje težine. */
@@ -3718,14 +3410,11 @@ void zadatak131()
 		}
 		std::sort(nizCifara.begin(), nizCifara.end());
 		stampajvektor(nizCifara);
-		
-	
 	}
 	else
 	{
 		std::cout << "n mora biti veci od 0!!!";
 	}
-	
 }
 
 /*132.Napisati program koji unesene brojeve sortira 
@@ -3779,7 +3468,6 @@ void zadatak133()
 	}
 	stampajvektor(niz);
 	std::cout << "Minimum je: " << min << " na poziciji " << pozicija; 
-
 }
 
 /*134.Sastaviti program za određivanje najmanjeg 
@@ -3797,7 +3485,6 @@ void zadatak134()
 	int max = niz[0];
 	int pozicijaParnih = 0;
 	int pozicijaNeparnih = 0;
-
 
 	for (int i = 1; i < niz.size(); i +=2)
 	{
@@ -3821,6 +3508,7 @@ void zadatak134()
 	}
 	std::cout << "\nMaksimum parnih indeksa je: " << max << " na poziciji " << pozicijaParnih;
 }
+
 /*135. . Napisati program kojim se na osnovu nizova 
 b[1], b[2],...,b[n] i c[1], c[2],...,c[n] formira niz a[1], 
 a*2+,...,a*2n+ čije su vrednosti b*1+, c*1+,b*2+ 
@@ -3867,8 +3555,6 @@ void zadatak136()
 		pp = niz[n - i - 1];
 		niz[n - i - 1] = niz[i];
 		niz[i] = pp;
-		
-
 	}
 	/*std::vector<float> inverzniNiz;
 	inverzniNiz.resize(n);
@@ -3972,7 +3658,6 @@ void zadatak139()
 	}
 	stampajvektor(niz);
 	std::cout << std::endl <<suma;
-
 }
 
 /*140. Neka su data dva niza xx i yy od po 
@@ -4097,7 +3782,6 @@ void zadatak143()
 	}
 
 	std::cout << "\nTo je broj: " << niz[indeks] << ", sa indeksom " << indeks;
-
 }
 
 /*144. Napisati program koji de ispitati da li je niz 
@@ -4222,7 +3906,6 @@ void zadatak145a()
 			pomocniNiz.push_back(niz[j]);
 		}
 	}
-
 }
 
 /*146. Učitati članove niza. Izračunati i ispisati sumu 
@@ -5516,8 +5199,61 @@ void zadatak180()
 			std::cout << std::endl;
 		}*/
 	}
+	
+	void zadatak()
+	{
+		int n = 0;
+		std::cout << "Unesite n: ";
+		std::cin >> n;
+
+		int m = 0;
+		
+		std::cout << "Unesite m: ";
+		std::cin >> m;
+		int** a = new int*[n];
+		for (int i = 0; i < n; i++)
+		{
+			a[i] = new int[m];
+		}
+
+		std::vector<std::vector<int>> matricaX;
+		matricaX.resize(n);
+		for (int i = 0; i < matricaX.size(); i++)
+		{
+			matricaX[i].resize(m);
+		}
+
+		std::cout << "Matrica X: \n";
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				matricaX[i][j] = (rand() % 100) / 10;
+				std::cout << matricaX[i][j] << " ";
+			}
+			std::cout << std::endl;
+		}
+
+		std::vector<std::vector<int>> matricaY;
+		matricaY.resize(matricaX.size());
+		for (int i = 0; i < matricaX.size(); i++)
+		{
+			matricaY[i].resize(matricaX[i].size());
+		}
+
+		std::cout << "Matrica Y: \n";
+		for (int i = 0; i < matricaX.size(); i++)
+		{
+			for (int j = 0; j < matricaX[i].size(); j++)
+			{
+				matricaY[i][j] = matricaX[i][j] * -1;
+				std::cout << matricaY[i][j] << " ";
+			}
+			std::cout << std::endl;
+		}
+	}
 int main()
 {
-	zadatakBonus3();
+	zadatak();
 	return 0;
 }

@@ -1,0 +1,45 @@
+﻿  Zbirka.cpp
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(66,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(77,14): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(128,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(139,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(224,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(307,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(308,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(389,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(578,11): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(618,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(693,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(960,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1209,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1213,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1280,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1281,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1366,2): warning C4144: '>=': relational expression as switch expression
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1507,17): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1524,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1542,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1556,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1559,21): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1755,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1756,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(1873,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2022,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2113,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2130,14): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2152,14): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2197,13): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2305,14): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2327,14): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2407,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2411,14): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2622,14): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2709,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(2760,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(3023,6): warning C4101: 'n': unreferenced local variable
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(3044,6): warning C4101: 'n': unreferenced local variable
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(3080,6): warning C4101: 'n': unreferenced local variable
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(4937,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(5262,6): warning C4101: 'multiplikatorPromenljive': unreferenced local variable
+C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\Zbirka\Zbirka.cpp(5263,6): warning C4101: 'n': unreferenced local variable
+  Zbirka.vcxproj -> C:\Users\alsko\OneDrive\Desktop\C++\ZbirkaCPP\x64\Debug\Zbirka.exe
